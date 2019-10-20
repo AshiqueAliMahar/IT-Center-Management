@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/popper.min.js" ></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../fontawesome-free-5.5.0-web/css/all.min.css">
+</head>
+<body>
+    <div class="container w-auto">
+        <div class="mt-5">
+            <img src="" alt="Not Found" class="img-fluid rounded-circle m-2" id="img">
+            <form>
+                <input type="file" onchange="readURL(this)"  accept="image/png, image/jpeg" class="btn btn-outline-success form-control-file m-2" name="image">
+                <input type="text" name="name" placeholder="Name" class="form-control m-2">
+                <input type="text" name="cnic" placeholder="CNIC" class="form-control m-2">
+                <button name="update" value="" class="btn btn-block btn-success m-2">Modify</button>
+            </form>
+        </div>
+    </div>
+    <script>
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#img').attr('src', e.target.result);
+                    /* document.getElementByClassName('blah').setAttribute('src',e.target.result); */
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>
